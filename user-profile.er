@@ -1,0 +1,32 @@
+[user]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+
+[user_profile]
+    *id {label:"VARCHAR(80)"}
+    title {label:"VARCHAR(80)"}
+    description {label:"VARCHAR(1024)"}
+    status {label:"INTEGER"}
+    classification {label:"VARCHAR(80)"}
+    user_id {label:"VARCHAR(80)"}
+
+[user_group]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+    description {label:"VARCHAR(1024)"}
+    classification {label:"VARCHAR(80)"}
+
+[user_role]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+    description {label:"VARCHAR(1024)"}
+
+[user_group_role]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+    description {label:"VARCHAR(1024)"}
+
+user 1--+ user_profile
+user_profile +--* user_group
+user_profile +--+ user_group_role
+user_role 1--* user_group_role

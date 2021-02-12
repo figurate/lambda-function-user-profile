@@ -1,6 +1,6 @@
 SHELL:=/bin/bash
 REGISTRY?=figurate
-IMAGE_NAME=lambda-function-python-template
+IMAGE_NAME=lambda-function-user-profile
 TAGS?=latest
 BUILD_ARGS?=
 PYTHON_VERSION=3.8
@@ -32,3 +32,4 @@ run:
 
 diagram:
 	$(DIAGRAMS) diagram.py
+	eralchemy -i user-profile.er -o user-profile.pdf
